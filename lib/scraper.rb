@@ -23,7 +23,7 @@ class Scraper
     new[:bio] = doc.css(".description-holder p").text
     doc.css(".social-icon-container a").each do |link|
      url = link.attribute("href").text
-      if url =~ /twitter/
+      if url.include?("twitter")
         new[:twitter] = url
       elsif url =~ /linkedin/
         new[:linkedin] = url
