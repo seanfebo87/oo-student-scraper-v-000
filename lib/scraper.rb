@@ -25,9 +25,9 @@ class Scraper
      url = link.attribute("href").text
       if url.include?("twitter")
         new[:twitter] = url
-      elsif url =~ /linkedin/
+      elsif url.include?("linkedin")
         new[:linkedin] = url
-      elsif url =~ /github/
+      elsif url.include?("github")
         new[:github] = url
       else
         new[:blog]=url
