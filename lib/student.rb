@@ -8,7 +8,7 @@ class Student
     @name = name 
   end
     
-  end
+  
 
   def self.create_from_collection(students_array)
     
@@ -22,4 +22,4 @@ class Student
     
   end
 
-
+end
