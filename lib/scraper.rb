@@ -5,10 +5,10 @@ require 'nokogiri'
 class Scraper 
 
   def self.scrape_index_page(index_url)
-    student = []
+    students = []
     doc = Nokogiri::HTML(open(index_url))
     doc.css(".student-card").each do |student|
-      student << { :name => student.search("h4").text, 
+      students << { :name => student.search("h4").text, 
                :location => student.search("p").text,
                :profile_url => student.search("a").attribute("href").value
              }
