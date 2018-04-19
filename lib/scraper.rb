@@ -22,7 +22,7 @@ class Scraper
     new[:profile_quote] = doc.css(".profile-quote").text
     new[:bio] = doc.css(".description-holder p").text
     doc.css(".social-icon-container a").each do |link|
-     url = anchor.attribute("href").text
+     url = link.attribute("href").text
       if url =~ /twitter/
         new[:twitter] = url
       elsif url =~ /linkedin/
